@@ -1,0 +1,20 @@
+default: &default
+  tax_rates:
+    default_rate: 0.10
+    exempt_rate: 0.00
+  exempt_tax_types:
+    - book
+    - food
+    - medical
+  food_items:
+    - chocolate bar
+    - chocolates
+  medical_items:
+    - pills
+  import_tax_rate: 0.05
+
+development:
+  <<: *default
+
+production:
+  <<: *default
