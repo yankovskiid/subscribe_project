@@ -4,10 +4,10 @@ require 'subscribe_project/strategies/tax_strategy'
 RSpec.describe SubscribeProject::Strategies::TaxStrategy do
   let(:config) do
     {
-      'exempt_tax_types' => ['food', 'medicine'],
+      'exempt_tax_product_types' => ['food', 'medical', 'book'],
       'tax_rates' => {
-        'exempt_rate' => 0.0,
-        'default_rate' => 0.1
+        'standard' => 0.1,
+        'exempt' => 0.0
       }
     }
   end

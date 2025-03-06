@@ -5,8 +5,11 @@ require 'subscribe_project/config_loader'
 RSpec.describe SubscribeProject::Parsers::InputParser do
   let(:config) do
     {
-      'food_items' => ['apple', 'banana'],
-      'medical_items' => ['pills', 'bandage']
+      'tax_rates' => { 'import' => 0.05 },
+      'product_types' => {
+        'food' => ['apple', 'banana'],
+        'medical' => ['pills', 'bandage']
+      }
     }
   end
 

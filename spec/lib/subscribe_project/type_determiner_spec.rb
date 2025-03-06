@@ -4,8 +4,11 @@ require 'subscribe_project/type_determiner'
 RSpec.describe SubscribeProject::TypeDeterminer do
   let(:config) do
     {
-      'food_items' => ['apple', 'banana'],
-      'medical_items' => ['aspirin', 'bandage']
+      'product_types' => {
+        'food' => ['apple', 'banana'],
+        'medical' => ['aspirin', 'bandage'],
+        'book' => ['Harry Potter', 'Lord of the Rings']
+      }
     }
   end
 
@@ -20,6 +23,7 @@ RSpec.describe SubscribeProject::TypeDeterminer do
 
     it 'returns "book" for book items' do
       expect(described_class.determine('Harry Potter book', config)).to eq('book')
+      expect(described_class.determine('Lord of the Rings novel', config)).to eq('book')
     end
 
     it 'returns "other" for items not in the config' do

@@ -4,7 +4,7 @@ require 'subscribe_project/strategies/import_tax_strategy'
 module SubscribeProject
   module Strategies
     RSpec.describe ImportTaxStrategy do
-      let(:config) { { 'import_tax_rate' => 0.05 } }
+      let(:config) { { 'tax_rates' => { 'import' => 0.05 } } }
       let(:strategy) { ImportTaxStrategy.new(config) }
 
       describe '#import_tax' do

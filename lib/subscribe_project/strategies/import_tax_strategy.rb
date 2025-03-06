@@ -10,7 +10,7 @@ module SubscribeProject
       end
 
       def import_tax(imported)
-        imported ? config['import_tax_rate'] : ZERO_IMPORT_TAX_RATE
+        imported ? config['tax_rates']['import'] : ZERO_IMPORT_TAX_RATE
       end
 
       private

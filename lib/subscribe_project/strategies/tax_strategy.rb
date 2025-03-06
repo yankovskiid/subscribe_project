@@ -8,7 +8,7 @@ module SubscribeProject
       end
 
       def tax_rate(type)
-        exempt_tax_type?(type) ? exempt_rate : default_rate
+        exempt_tax_type?(type) ? exempt_rate : standard_rate
       end
 
       private
@@ -16,15 +16,15 @@ module SubscribeProject
       attr_reader :config
 
       def exempt_tax_type?(type)
-        config['exempt_tax_types'].include?(type)
+        config['exempt_tax_product_types'].include?(type)
       end
 
       def exempt_rate
-        config['tax_rates']['exempt_rate']
+        config['tax_rates']['exempt']
       end
 
-      def default_rate
-        config['tax_rates']['default_rate']
+      def standard_rate
+        config['tax_rates']['standard']
       end
     end
   end

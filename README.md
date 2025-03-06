@@ -54,11 +54,22 @@ Configuration settings can be found in `config/config.yml`.
 To configure taxes and import settings, add the following to your `config/config.yml`:
 
 ```yaml
-taxes:
-  default_rate: 0.1
-  exempt_rate: 0.00
-
-import_tax_rate: 0.05
+  tax_rates:
+    standard: 0.10
+    exempt: 0.00
+    import: 0.05
+  exempt_tax_product_types:
+    - book
+    - food
+    - medical
+  product_types:
+    food:
+      - chocolate bar
+      - chocolates
+    medical:
+      - pills
+    book:
+      - book
 ```
 
 ## Running Tests
